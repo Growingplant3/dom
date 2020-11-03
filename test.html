@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>DOM操作入門</title>
+  </head>
+  <body>
+    <h1 id="select">DOM操作入門</h1>
+    <h1>要素の取得</h1>
+    <input type="button" value="Click" onclick="namechange()">
+    <ul>
+      <li>DOM1</li>
+      <li>DOM2</li>
+      <li>DOM3</li>
+    </ul>
+    <ul>
+      <li class="list">DIVE</li>
+      <li class="list">INTO</li>
+      <li class="list">CODE</li>
+    </ul>
+    <script src="test.js"></script>
+    <script>
+      const namechange = function(){
+          const myp = document.getElementById('select');
+          myp.innerHTML = "ノード入門";
+        }
+      const target = document.getElementsByTagName('h1');
+      console.log(target);
+      console.log(target[1]);
+      console.log(target[2]);
+      let namenodechange = function(){
+        let li01 = document.getElementsByTagName('li');
+        for (let i = 0; i < li01.length; i++) {
+          li01[i].innerHTML = "liのテキストを変更したよ";
+        }
+      };
+      const li_tags = document.getElementsByTagName('li');
+      console.log(li_tags);
+      const lists = document.getElementsByClassName('list');
+      console.log(lists);
+      console.log(lists[0]);
+      console.log(lists[0].textContent);
+      console.log("改行");
+      for (let i = 0; i < lists.length; i++) {
+        console.log(lists[i]);
+      }
+      console.log("改行");
+      for (let i = 0; i < lists.length; i++) {
+        console.log(lists[i].textContent);
+      }
+    </script>
+  </body>
+</html>
